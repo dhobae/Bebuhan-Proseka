@@ -29,9 +29,10 @@ export default function Hero() {
                 {/* Left Side: Hero Content */}
                 <div className="w-full md:w-1/2 flex flex-col items-start space-y-6 md:pt-0 z-20">
                     <motion.div
-                        initial={{ opacity: 0, x: -50 }}
+                        initial={{ opacity: 0, x: -30 }}
                         animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8 }}
+                        transition={{ duration: 0.6, ease: "easeOut" }}
+                        style={{ willChange: "transform, opacity" }}
                     >
                         <div className="inline-block relative mb-12">
                             <div className="absolute inset-0 skew-x-[-12deg] bg-white border-2 border-sekai-cyan shadow-[4px_4px_0_theme(colors.sekai.cyan)]"></div>
@@ -53,9 +54,10 @@ export default function Hero() {
                     </motion.div>
 
                     <motion.div
-                        initial={{ opacity: 0, y: 30 }}
+                        initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
+                        transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
+                        style={{ willChange: "transform, opacity" }}
                         className="flex flex-col sm:flex-row items-center gap-3 sm:gap-6 pt-2 w-full"
                     >
                         {/* Primary Button */}
