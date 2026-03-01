@@ -11,5 +11,18 @@ export default defineConfig({
   ],
   resolve: {
     dedupe: ['react', 'react-dom', 'three', '@react-three/fiber', '@react-three/drei']
+  },
+  build: {
+    chunkSizeWarningLimit: 1000,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'vendor': ['react', 'react-dom', 'react-router-dom'],
+          'three': ['three'],
+          'react-three': ['@react-three/fiber', '@react-three/drei'],
+          'animation': ['framer-motion'],
+        }
+      }
+    }
   }
 })
